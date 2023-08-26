@@ -12,4 +12,4 @@ truncate -s0 /etc/apk/repositories
 
 # update the system
 apk update
-apk upgradesu
+apk upgrade
