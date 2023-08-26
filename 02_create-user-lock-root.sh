@@ -40,14 +40,12 @@ read -s _password
 #echo $_username:$_password | chpasswd
 echo "$password" | passwd "$username" --stdin
 
-
 ################################################################
 ###                     Lock root                           ####
 ################################################################
 
 # delete and lock root password
 passwd -d -l root
-
 
 ################################################################
 ###                         Exit                            ####
