@@ -13,12 +13,15 @@
 echo -n "Enter the username: "
 read -r _username
 
-# the optional -g "<Full Name>" above sets the GECOS field.
-# setting this string - at least equal to the username - makes the user distinguishable,
-# e.g. when they are listed at the login screen of a display manager.
-adduser --gid "$_username" $_username   \
-        --home /home/"$_username"       \
-        --shell ash
+# adduser:
+#       -g "<Full Name>" sets the GECOS field.
+#           setting this string - at least equal to the username - makes the user distinguishable,
+#           e.g. when they are listed at the login screen of a display manager.
+#       -h: home directory
+#       -s: login shell
+adduser -g "$_username" $_username   \
+        -h /home/"$_username"       \
+        -s ash
         $_username
 
 ################################################################
