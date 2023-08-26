@@ -1,7 +1,6 @@
 # run this script as root
 
-# -n 
-#      do not output a trailing newline.
+# create user
 echo -n "Enter the username: "
 read -r _username
 
@@ -12,11 +11,9 @@ echo -e ""
 
 adduser --home /home/"$_username" $_username # --shell bash
 
-#--stdin
-#      This option is used to indicate that passwd should read the new
-#      password from standard input, which can be a pipe.
 echo $_username:$_password | chpasswd
 
+# add user to wheel group
 adduser $_username wheel
 
 # delete and lock root password
@@ -26,6 +23,7 @@ passwd -l root
 unset _username
 unset _password
 
+# install doas
 apk add doas
 
 exit
