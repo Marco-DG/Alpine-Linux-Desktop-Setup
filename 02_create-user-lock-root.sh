@@ -44,8 +44,8 @@ adduser $_username wheel
 
 apk add doas > /dev/null # "> /dev/null" makes it silent
 
-#touch /etc/doas.d/doas.conf
-#echo "permit persist :wheel" >> /etc/doas.d/doas.conf
+touch /etc/doas.d/doas.conf
+echo "permit persist :wheel" >> /etc/doas.d/doas.conf
 
 ################################################################
 ###                     User Password                       ####
@@ -58,12 +58,16 @@ echo ""
 echo $_username:$_password | chpasswd
 
 ################################################################
+###                       Lock root                         ####
+################################################################
+
+doas passwd -d -l root
+
+################################################################
 ###                         Exit                            ####
 ################################################################
 
-echo    ""
-echo    "exit this shell with 'exit' log in as $_username and then run:"
-echo -e "\tdoas passwd -d -l root"
-
 unset _username
 unset _password
+
+exit
