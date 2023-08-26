@@ -1,6 +1,6 @@
 # run this script as root
 
-_create-user-lock-root()
+_create_user_lock_root()
 {
     # -n 
     #      do not output a trailing newline.
@@ -27,5 +27,5 @@ _create-user-lock-root()
     unset _password
 }
 
-_create-user-lock-root
-unset _create-user-lock-root
+_create_user_lock_root
+unset _create_user_lock_root
