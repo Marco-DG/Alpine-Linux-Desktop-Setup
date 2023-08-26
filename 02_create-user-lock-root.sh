@@ -19,9 +19,11 @@ read -r _username
 #           e.g. when they are listed at the login screen of a display manager.
 #       -h: home directory
 #       -s: login shell
-adduser -g "$_username" $_username   \
-        -h /home/"$_username"       \
-        -s ash
+#       -D: don't assign a password
+adduser -g "$_username" $_username      \
+        -h /home/"$_username"           \
+        -s ash                          \
+        -D                              \
         $_username
 
 ################################################################
