@@ -10,4 +10,4 @@ truncate -s0 /etc/apk/repositories
 
 # update the system
 doas apk update
-doas apk upgrade
+doas apk upgradesu
