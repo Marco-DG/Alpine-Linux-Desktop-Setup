@@ -32,13 +32,13 @@ adduser -g "$_username" $_username      \
 
 adduser $_username wheel
 
-apk add doas
+apk add doas > /dev/null # "> /dev/null" makes it silent
 
 ################################################################
 ###                     User Password                       ####
 ################################################################
 
-echo -e "\n"
+echo ""
 echo -n "Enter the password: "
 read -s _password
 
