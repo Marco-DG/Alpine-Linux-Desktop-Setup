@@ -15,7 +15,7 @@ adduser --home /home/"$_username" $_username # --shell bash
 #--stdin
 #      This option is used to indicate that passwd should read the new
 #      password from standard input, which can be a pipe.
-echo $username:$password | chpasswd
+echo $_username:$_password | chpasswd
 
 adduser $_username wheel
 
