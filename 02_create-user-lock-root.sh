@@ -67,6 +67,7 @@ passwd -d -l root
 ###                         Exit                            ####
 ################################################################
 
+echo ""
 echo "run: 'exit' and then login again as '$_username'"
 
 unset _username
