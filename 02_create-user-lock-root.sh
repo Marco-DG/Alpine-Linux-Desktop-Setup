@@ -9,16 +9,13 @@ read -s _password
 
 echo -e ""
 
-adduser --home /home/"$_username" $_username # --shell bash
+adduser --home /home/"$_username" $_username \
+        --ingroup wheel # --shell bash
 
 echo $_username:$_password | chpasswd
 
-# add user to wheel group
-adduser $_username wheel
-
 # delete and lock root password
-passwd -d root
-passwd -l root
+passwd -d -l root
 
 unset _username
 unset _password
