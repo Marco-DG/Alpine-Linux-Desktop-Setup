@@ -1,3 +1,5 @@
+# run this script as root
+
 # empty the content of /etc/apk/repositories
 truncate -s0 /etc/apk/repositories
 
@@ -9,5 +11,5 @@ truncate -s0 /etc/apk/repositories
 } >> /etc/apk/repositories
 
 # update the system
-doas apk update
-doas apk upgradesu
+apk update
+apk upgradesu
