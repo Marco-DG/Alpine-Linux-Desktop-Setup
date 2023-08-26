@@ -5,7 +5,7 @@
 echo -n "Enter the username: "
 read -r _username
 
-if "$_username" | grep -E '^[A-Za-z_]+$' -q; then
+if "$_username" | grep -E '^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$' -q; then
     exit 1
 fi
 
