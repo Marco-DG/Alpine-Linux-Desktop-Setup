@@ -8,6 +8,8 @@ read -r _username
 echo -n "Enter the password: "
 read -s _password
 
+echo -e ""
+
 adduser --home /home/"$_username" $_username # --shell bash
 
 #--stdin
