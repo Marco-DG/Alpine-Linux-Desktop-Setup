@@ -1,7 +1,13 @@
+# run this script as root
+
 # -n 
 #      do not output a trailing newline.
 echo -n "Enter the username: "
 read -r _username
+
+if [ "$_username" =~ ^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$ ]; then
+    exit 1
+fi
 
 echo -n "Enter the password: "
 read -s _password
@@ -11,8 +17,7 @@ adduser --home /home/"$_username" $_username # --shell bash
 #--stdin
 #      This option is used to indicate that passwd should read the new
 #      password from standard input, which can be a pipe.
-echo "$password" | passwd "$username" --stdin
-
+echo "$_password" | passwd "$_username" --stdin
 
 adduser $_username wheel
 
