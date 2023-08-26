@@ -21,8 +21,6 @@ read -r _username
 #       -s: login shell
 #       -D: don't assign a password
 adduser -g "$_username" $_username      \
-        -h /home/"$_username"           \
-        -s ash                          \
         -D                              \
         $_username
 
@@ -40,8 +38,9 @@ apk add doas > /dev/null # "> /dev/null" makes it silent
 
 echo -n "Enter the password: "
 read -s _password
+echo ""
 
-echo $_username:$_password | chpasswd > /dev/null
+echo $_username:$_password | chpasswd
 
 ################################################################
 ###                     Lock root                           ####
