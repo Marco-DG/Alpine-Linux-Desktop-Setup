@@ -14,19 +14,19 @@ echo -n "Enter the username: "
 read -r _username
 
 
-#adduser [OPTIONS] USER [GROUP]
-#
-#Create new user, or add USER to GROUP
-#
-#     -h --home DIR           Home directory
-#     -g --gecos GECOS        GECOS field
-#     -s --shell SHELL        Login shell named SHELL by example /bin/bash
-#     -G --ingroup GRP        Group (by name)
-#     -S --system             Create a system user
-#     -D --disabled-password  Don't assign a password, so cannot login
-#     -H --no-create-home     Don't create home directory
-#     -u --uid UID            User id
-#     -k SKEL                 Skeleton directory (/etc/skel)
+# adduser [OPTIONS] USER [GROUP]
+# 
+# Create new user, or add USER to GROUP
+# 
+#      -h --home DIR           Home directory
+#      -g --gecos GECOS        GECOS field
+#      -s --shell SHELL        Login shell named SHELL by example /bin/bash
+#      -G --ingroup GRP        Group (by name)
+#      -S --system             Create a system user
+#      -D --disabled-password  Don't assign a password, so cannot login
+#      -H --no-create-home     Don't create home directory
+#      -u --uid UID            User id
+#      -k SKEL                 Skeleton directory (/etc/skel)
 
 # note: -g "<Full Name>" sets the GECOS field.
 #        setting this string - at least equal to the username - makes the user distinguishable,
