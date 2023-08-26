@@ -1,0 +1,8 @@
+localhost login: root
+
+setup-alpine
+    // if no user: allow root ssh login no
+    // sda
+    // cryptsys
+
+reboot
