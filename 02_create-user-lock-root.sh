@@ -42,8 +42,7 @@ echo ""
 echo -n "Enter the password: "
 read -s _password
 
-#echo $_username:$_password | chpasswd
-echo "$password" | passwd "$username" --stdin
+echo $_username:$_password | chpasswd
 
 ################################################################
 ###                     Lock root                           ####
