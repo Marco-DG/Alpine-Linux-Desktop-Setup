@@ -61,8 +61,9 @@ echo $_username:$_password | chpasswd
 ###                         Exit                            ####
 ################################################################
 
+echo    ""
 echo    "exit this shell with 'exit' log in as $_username and then run:"
-echo -e "\tpasswd -d -l root"
+echo -e "\tdoas passwd -d -l root"
 
 unset _username
 unset _password
