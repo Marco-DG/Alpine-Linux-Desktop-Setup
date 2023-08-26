@@ -38,11 +38,10 @@ apk add doas > /dev/null # "> /dev/null" makes it silent
 ###                     User Password                       ####
 ################################################################
 
-echo ""
 echo -n "Enter the password: "
 read -s _password
 
-echo $_username:$_password | chpasswd
+echo $_username:$_password | chpasswd > /dev/null
 
 ################################################################
 ###                     Lock root                           ####
