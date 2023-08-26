@@ -44,8 +44,8 @@ adduser $_username wheel
 
 apk add doas > /dev/null # "> /dev/null" makes it silent
 
-touch /etc/doas.d/doas.conf
-echo "permit persist :wheel" >> /etc/doas.d/doas.conf
+#touch /etc/doas.d/doas.conf
+#echo "permit persist :wheel" >> /etc/doas.d/doas.conf
 
 ################################################################
 ###                     User Password                       ####
