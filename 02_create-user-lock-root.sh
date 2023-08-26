@@ -13,15 +13,27 @@
 echo -n "Enter the username: "
 read -r _username
 
-# adduser:
-#       -g "<Full Name>" sets the GECOS field.
-#           setting this string - at least equal to the username - makes the user distinguishable,
-#           e.g. when they are listed at the login screen of a display manager.
-#       -h: home directory
-#       -s: login shell
-#       -D: don't assign a password
-adduser -g "$_username" $_username      \
-        -D                              \
+
+#adduser [OPTIONS] USER [GROUP]
+#
+#Create new user, or add USER to GROUP
+#
+#     -h --home DIR           Home directory
+#     -g --gecos GECOS        GECOS field
+#     -s --shell SHELL        Login shell named SHELL by example /bin/bash
+#     -G --ingroup GRP        Group (by name)
+#     -S --system             Create a system user
+#     -D --disabled-password  Don't assign a password, so cannot login
+#     -H --no-create-home     Don't create home directory
+#     -u --uid UID            User id
+#     -k SKEL                 Skeleton directory (/etc/skel)
+
+# note: -g "<Full Name>" sets the GECOS field.
+#        setting this string - at least equal to the username - makes the user distinguishable,
+#         e.g. when they are listed at the login screen of a display manager.
+
+adduser --gecos "$_username" $_username     \
+        --disabled-password                 \
         $_username
 
 ################################################################
