@@ -7,9 +7,13 @@ _create_user_lock_root()
     echo -n "Enter the username: "
     read -r _username
 
-    if "$_username" | grep -E '^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$' -q; then
+
+    case $_username in (*"^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$"*)
         return 1
-    fi
+    ;;esac
+    #if "$_username" | grep -E '^[a-z_]([a-z0-9_-]{0,31}|[a-z0-9_-]{0,30}\$)$' -q; then
+    #    return 1
+    #fi
 
     echo -n "Enter the password: "
     read -s _password
