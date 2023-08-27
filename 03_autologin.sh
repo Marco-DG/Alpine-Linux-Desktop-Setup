@@ -19,6 +19,7 @@ _username=$(id -u -n)
 ################################################################
 
 apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing tcc
+apk add musl-dev # the C standard library
 
 ################################################################
 ###                   write autologin.c                     ####
@@ -74,6 +75,6 @@ doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autolog
 ###                         Exit                            ####
 ################################################################
 
-rm autologin.c # remove autologin.c
+#rm autologin.c # remove autologin.c
 
 unset _username
