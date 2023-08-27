@@ -86,8 +86,7 @@ if grep -q /usr/sbin/autologin /etc/inittab; then
     echo "WARNING: the file '/etc/inittab' alredy contains the string ':respawn:/sbin/getty -n -l /usr/sbin/autologin', as such the script will not commit any changes and it adivised to check the '/etc/inittab' integrity manually."
 else
     # replace ":respawn:/sbin/getty" with ":respawn:/sbin/getty -n -l /usr/sbin/autologin"
-    # use "@" as a delimiter
-    # -i    Edit file in-place
+    # uses "@" as a delimiter; the '-i' flag edits the file in-place
     doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autologin@g' /etc/inittab
 fi
 
