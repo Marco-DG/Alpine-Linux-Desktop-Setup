@@ -78,7 +78,7 @@ doas mv autologin /usr/sbin/    # move binary to /usr/sbin
 # x: Match whole line
 # q: Shhhhh... minimal printing
 _string_to_search="/usr/sbin/autologin"
-if grep -Fxq "$_string_to_search" /etc/inittab
+if grep -Fxq $_string_to_search /etc/inittab
 then
     # ERROR
     echo "while searching the file '/etc/inittab' the string '$_string_to_search' has been found within, or an error is occurred"
