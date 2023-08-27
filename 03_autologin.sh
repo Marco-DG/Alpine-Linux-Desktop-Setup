@@ -33,8 +33,7 @@ truncate -s0 autologin.c    # clear file
         echo    "{"
         echo -e '\texeclp("login", "login", "-f", '; echo -n '"$_username"'; echo -n ', 0);'
         echo    "}"
-}
->> autologin.c
+} >> autologin.c
 
 ################################################################
 ###                   compile autologin                     ####
