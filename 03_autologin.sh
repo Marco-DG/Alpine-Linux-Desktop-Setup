@@ -77,6 +77,12 @@ doas cp /etc/inittab ~/inittab.backup
 doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autologin@g' /etc/inittab
 
 ################################################################
+###                 truncate /etc/motd                      ####
+################################################################
+
+doas truncate -s0 /etc/motd # do not display starting message
+
+################################################################
 ###                         Exit                            ####
 ################################################################
 
