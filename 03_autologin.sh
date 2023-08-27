@@ -9,11 +9,11 @@
 #   http://littlesvr.ca/linux-stuff/articles/autologinconsole/autologinconsole.php
 
 ################################################################
-###                 Check root privileges                   ####
+###             Check that user is not root                 ####
 ################################################################
 
-if [ "$(id -u)" -ne 0 ]
-    then echo "The script requires root privileges"
+if [ "$(id -u)" -eq 0 ]
+    then echo "This script cannot be executed by root"
     exit 1
 fi
 
@@ -22,6 +22,14 @@ fi
 ################################################################
 
 _username=$(id -u -n)
+
+
+################################################################
+###                 ask for root privileges                 ####
+################################################################
+
+echo "Please provide root access: "
+doas -u root ash << EOF
 
 ################################################################
 ###                     install tcc                         ####
@@ -92,6 +100,7 @@ doas truncate -s0 /etc/motd # do not display starting message
 ################################################################
 ###                         Exit                            ####
 ################################################################
+EOF
 
 #rm -f autologin.c # remove autologin.c
 

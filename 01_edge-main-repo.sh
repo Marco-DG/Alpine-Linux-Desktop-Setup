@@ -1,4 +1,15 @@
-# run this script as root
+################################################################
+###                 Check root privileges                   ####
+################################################################
+
+if [ "$(id -u)" -ne 0 ]
+    then echo "This script requires root privileges"
+    exit 1
+fi
+
+################################################################
+###                 Edit /etc/apk/repositories              ####
+################################################################
 
 # empty the content of /etc/apk/repositories
 truncate -s0 /etc/apk/repositories
@@ -10,6 +21,9 @@ truncate -s0 /etc/apk/repositories
         echo "# https://dl-cdn.alpinelinux.org/alpine/edge/testing"
 } >> /etc/apk/repositories
 
-# update the system
+################################################################
+###                     Update the system                   ####
+################################################################
+
 apk update
 apk upgrade
