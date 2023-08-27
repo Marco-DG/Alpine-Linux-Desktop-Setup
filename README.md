@@ -11,4 +11,4 @@
 - adds the newly created user to the `wheel` group.
 - installs the `doas` package.
 - disables the `root` user.
-- prompts the user to digit the `exit` command and login again as the newly created user, such user will be able to gain root privileges trought the `sudo` command (similarly to the `sudo` command).
+- prompts the user to digit the `exit` command and login again as the newly created user, such user will be able to gain root privileges trough the `doas` command (`sudo` alternative).
