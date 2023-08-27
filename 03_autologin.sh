@@ -1,3 +1,5 @@
+# run with root privileges
+
 # How:
 #   making a wrapper, called autologin, around /bin/login and putting it in /usr/sbin/
 #   editing /etc/inittab specifying the use of /usr/sbin/autologin instead of /bin/login
@@ -67,6 +69,7 @@ doas mv autologin /usr/sbin/    # move binary to /usr/sbin
 # replace ":respawn:/sbin/getty" with ":respawn:/sbin/getty -n -l /usr/sbin/autologin"
 
 # backup /etc/inittab
+echo "a backup file called 'inittab.backup' has been created in your home directory"
 doas cp /etc/inittab ~/inittab.backup
 
 # use "@" as a delimiter
