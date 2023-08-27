@@ -27,12 +27,12 @@ apk add musl-dev # the C standard library
 
 truncate -s0 autologin.c    # clear file
 {
-        echo    "#include <unistd.h>"
-        echo    ""
-        echo    "int main()"
-        echo    "{"
-        echo -e '\texeclp("login", "login", "-f", '; echo -n '"$_username", '; echo '0);';
-        echo    "}"
+        echo        "#include <unistd.h>"
+        echo        ""
+        echo        "int main()"
+        echo        "{"
+        echo -e -n  '\texeclp("login", "login", "-f", '; echo -n '"$_username", '; echo '0);';
+        echo        "}"
 } >> autologin.c
 
 ################################################################
