@@ -66,6 +66,9 @@ doas mv autologin /usr/sbin/    # move binary to /usr/sbin
 
 # replace ":respawn:/sbin/getty" with ":respawn:/sbin/getty -n -l /usr/sbin/autologin"
 
+# backup /etc/inittab
+doas cp /etc/inittab ~/inittab.backup
+
 # use "@" as a delimiter
 # -i    Edit file in-place
 doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autologin@g' /etc/inittab
