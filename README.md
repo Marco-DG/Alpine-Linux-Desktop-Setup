@@ -9,6 +9,6 @@
 
 - asks the user to specify a *username* and a *password*: a user with such credentials will be created.
 - adds the newly created user to the `wheel` group.
-- installs the `doas` package.
+- installs the `doas` package (`sudo` alternative).
 - disables the `root` user.
-- prompts the user to digit the `exit` command and login again as the newly created user, such user will be able to gain root privileges trough the `doas` command (`sudo` alternative).
+- prompts the user to digit the `exit` command and login again as the newly created user, such user will be able to gain root privileges trough the `doas` command.
