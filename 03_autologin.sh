@@ -1,5 +1,3 @@
-# run with root privileges
-
 # How:
 #   making a wrapper, called autologin, around /bin/login and putting it in /usr/sbin/
 #   editing /etc/inittab specifying the use of /usr/sbin/autologin instead of /bin/login
@@ -9,6 +7,15 @@
 # Idea:
 #   https://wiki.gumstix.com/index.php/AutoLogin
 #   http://littlesvr.ca/linux-stuff/articles/autologinconsole/autologinconsole.php
+
+################################################################
+###                 Check root privileges                   ####
+################################################################
+
+if [ $EUID > 0 ]
+  then echo "The script requires root privileges"
+  exit
+fi
 
 ################################################################
 ###                   get current user                      ####
@@ -86,6 +93,6 @@ doas truncate -s0 /etc/motd # do not display starting message
 ###                         Exit                            ####
 ################################################################
 
-rm -f autologin.c # remove autologin.c
+#rm -f autologin.c # remove autologin.c
 
 unset _username
