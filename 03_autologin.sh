@@ -74,6 +74,6 @@ doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autolog
 ###                         Exit                            ####
 ################################################################
 
-#rm autologin.c # remove autologin.c
+rm -f autologin.c # remove autologin.c
 
 unset _username
