@@ -12,10 +12,7 @@
 ###                 Check root privileges                   ####
 ################################################################
 
-if [ $EUID > 0 ]
-  then echo "The script requires root privileges"
-  exit
-fi
+if [ "$(id -u)" -ne 0 ] then echo "The script requires root privileges"; exit 1; fi
 
 ################################################################
 ###                   get current user                      ####
@@ -40,7 +37,7 @@ truncate -s0 autologin.c    # clear file
         echo ""
         echo "int main()"
         echo "{"
-        echo "    execlp('login', 'login', '-f', '$_username', '0);"
+        echo "    execlp("login", "login", "-f", "$_username", 0);"
         echo "}"
 } >> autologin.c
 
