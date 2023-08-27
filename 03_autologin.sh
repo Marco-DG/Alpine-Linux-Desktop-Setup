@@ -12,7 +12,10 @@
 ###                 Check root privileges                   ####
 ################################################################
 
-if [ "$(id -u)" -ne 0 ]; then echo "The script requires root privileges"; exit 1; fi
+if [ "$(id -u)" -ne 0 ]
+    then echo "The script requires root privileges"
+    exit 1
+fi
 
 ################################################################
 ###                   get current user                      ####
