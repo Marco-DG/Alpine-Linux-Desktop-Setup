@@ -54,6 +54,8 @@ adduser $_username wheel
 apk add doas > /dev/null # "> /dev/null" makes it silent
 
 touch /etc/doas.d/doas.conf
+# nopass: do not ask password ever.
+# persist:  do not ask for a password again for some time.
 echo "permit nopass :wheel" >> /etc/doas.d/doas.conf            # https://man.openbsd.org/doas.conf.5
 
 ################################################################
