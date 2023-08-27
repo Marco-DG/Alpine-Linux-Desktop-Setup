@@ -73,30 +73,15 @@ doas mv autologin /usr/sbin/    # move binary to /usr/sbin
 #         -I INITSTR      Send INITSTR before anything else
 #         -H HOST         Log HOST into the utmp file as the hostname   
 
-# grep: 
-# F: Affects how PATTERN is interpreted (fixed string instead of a regex)
-# x: Match whole line
-# q: Shhhhh... minimal printing
-_string_to_search="/usr/sbin/autologin"
-if grep -Fxq $_string_to_search /etc/inittab
-then
-    # ERROR
-    echo "while searching the file '/etc/inittab' the string '$_string_to_search' has been found within, or an error is occurred"
-    echo "as such the script cannot proceed: aborting"
-    exit
+# check if the file is been modified already
+if grep -q /usr/sbin/autologin /etc/inittab; then
+    echo "WARNING: the file '/etc/inittab' alredy contains the string ':respawn:/sbin/getty -n -l /usr/sbin/autologin', as such the script will not commit any changes and it adivised to check the '/etc/inittab' integrity manually."
 else
-    # backup /etc/inittab
-    echo "a backup file called 'inittab.backup' has been created in your home directory"
-    doas cp /etc/inittab ~/inittab.backup
-    
     # replace ":respawn:/sbin/getty" with ":respawn:/sbin/getty -n -l /usr/sbin/autologin"
     # use "@" as a delimiter
     # -i    Edit file in-place
     doas sed -i 's@:respawn:/sbin/getty@:respawn:/sbin/getty -n -l /usr/sbin/autologin@g' /etc/inittab
 fi
-
-unset _string_to_search
-
 
 ################################################################
 ###                 truncate /etc/motd                      ####
