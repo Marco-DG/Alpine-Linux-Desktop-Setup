@@ -102,6 +102,6 @@ doas truncate -s0 /etc/motd # do not display starting message
 ################################################################
 EOF
 
-#rm -f autologin.c # remove autologin.c
+rm -f autologin.c # remove autologin.c
 
 unset _username
