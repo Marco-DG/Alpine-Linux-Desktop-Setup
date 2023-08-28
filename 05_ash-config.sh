@@ -65,8 +65,7 @@ exec ash
 rm -f $HOME/.ash_history
 
 #doas -u $(id -u -n) ash << EOF
-#    
-#    
+#    rm -f $HOME/.ash_history
 #EOF
 
 unset _to_nuke_or_not_to_nuke_that_is_the_question
