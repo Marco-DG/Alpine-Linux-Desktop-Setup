@@ -22,7 +22,7 @@ touch $HOME/.configs/ash/.ashrc
 ###############################################
 echo -n "ATTENTION !!! '/etc/profile/ will be nuked, digit 'y' to continue, any other key will exit: "
 read _to_nuke_or_not_to_nuke_that_is_the_question
-test "$_to_nuke_or_not_to_nuke_that_is_the_question" -eq "y" || exit 1
+test "$_to_nuke_or_not_to_nuke_that_is_the_question" -eq "y" || echo "exiting" && exit 1
 unset _to_nuke_or_not_to_nuke_that_is_the_question
 
 
