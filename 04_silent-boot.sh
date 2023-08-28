@@ -1,5 +1,3 @@
-#!/bin/sh
-
 ### How:
 #       by adding the '--quiet' flag to each '/sbin/openrc' command within '/etc/inittab'
 
