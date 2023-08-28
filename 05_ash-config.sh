@@ -24,8 +24,6 @@ echo -n "ATTENTION !!! '/etc/profile/ will be nuked, digit 'y' to continue, any 
 read -r _to_nuke_or_not_to_nuke_that_is_the_question
 [ "$_to_nuke_or_not_to_nuke_that_is_the_question" != "y" ] && exit 1
 
-
-
 ###############################################
 ### ask for root privileges                 ###
 ###############################################
@@ -66,7 +64,7 @@ EOF
 mkdir $HOME/.logs/ash
 {
     echo 'HISTFILE="$HOME/.config/ash_history"'
-} >> $HOME/.configs/.ashrc
+} >> $HOME/.configs/ash/.ashrc
 
 ###############################################
 ### move .ash_history                       ###
