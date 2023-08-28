@@ -14,8 +14,7 @@ fi
 ###############################################
 ### create .ashrc                           ###
 ###############################################
-mkdir $HOME/.configs/
-mkdir $HOME/.configs/ash/
+mkdir -p $HOME/.configs/ash/
 touch $HOME/.configs/ash/.ashrc
 
 ###############################################
