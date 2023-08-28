@@ -68,5 +68,5 @@ if grep -q \#rc_parallel=\"NO\" /etc/rc.conf; then
     # uses "@" as a delimiter; the '-i' flag edits the file in-place
     doas sed -i 's@#rc_parallel="NO"@rc_parallel="YES"@g' /etc/rc.conf
 else
-    echo "WARNING: unable to find the string '#rc_parallel=\"NO\"'"
+    echo "WARNING: unable to find the string '#rc_parallel=\"NO\"' in /etc/rc.conf"
 fi
