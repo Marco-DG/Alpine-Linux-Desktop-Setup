@@ -1,18 +1,18 @@
 ### How:
 #       by adding the '--quiet' flag to each '/sbin/openrc' command within '/etc/inittab'
 
-################################################################
-###                 Check root privileges                   ####
-################################################################
+###############################################################
+###                 Check root privileges                   ###
+###############################################################
 
 if [ "$(id -u)" -ne 0 ]
     then echo "This script requires root privileges"
     exit 1
 fi
 
-################################################################
-###                 Parallelizing Boot                      ####
-################################################################
+###############################################################
+###                 Parallelizing Boot                      ###
+###############################################################
 
 ### NOTE on 'Parallelize Boot':
 # see: https://unix.stackexchange.com/questions/579013/how-to-improve-startup-time-of-openrc-system
@@ -29,9 +29,9 @@ else
     echo "WARNING: unable to find the string '#rc_parallel=\"NO\"' in /etc/rc.conf"
 fi
 
-################################################################
-###                     Silencing Boot                      ####
-################################################################
+###############################################################
+###                     Silencing Boot                      ###
+###############################################################
 # sed: uses "@" as a delimiter; the '-i' flag edits the file in-place
 
 # openrc sysinit

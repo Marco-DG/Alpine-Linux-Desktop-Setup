@@ -1,0 +1,11 @@
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+export ENV=\$HOME/.configs/ash/.ashrc
+
+for _script in /etc/profile.d/*.sh ; do
+    if [-r "$_script" ] ; then
+        . "$_script"
+    fi
+done
+
+unset _script
