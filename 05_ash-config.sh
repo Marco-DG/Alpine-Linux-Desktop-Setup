@@ -71,8 +71,8 @@ mkdir -p $_home/.logs/ash
 mv -f $_home/.ash_history $_home/.logs/ash/
 
 
-source $_home/.configs/ash/.ashrc
-rm -f $_home/.ash_history
+echo ""
+echo "run: 'reboot', re-login and then run: 'rm .ash_history'"
 
 
 unset _home
