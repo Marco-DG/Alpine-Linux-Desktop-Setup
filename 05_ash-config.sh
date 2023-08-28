@@ -55,6 +55,7 @@ EOF
 ###             ~/.configs/ash/.ashrc                       ###
 ###############################################################
 mkdir -p $_home/.configs/ash/
+rm -f $_home/.configs/ash/.ashrc
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.configs/ash/.ashrc  -P $_home/.configs/ash/
 
 ###############################################################
