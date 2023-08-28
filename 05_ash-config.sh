@@ -72,7 +72,8 @@ mkdir -p $HOME/.logs/ash
 mv -f $HOME/.ash_history $HOME/.logs/ash/
 
 doas -u $(id -u -n) ash << EOF
-    exec ash -l
+    rm -f $HOME/.ash_history
+    #exec ash -l
 EOF
 
 unset _to_nuke_or_not_to_nuke_that_is_the_question
