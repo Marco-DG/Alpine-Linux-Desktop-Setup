@@ -1,6 +1,15 @@
 ### How:
 #       by adding the '--quiet' flag to each '/sbin/openrc' command within '/etc/inittab'
 
+### NOTES
+#   the --quiet flag alone does not suppress all the messages:
+#       - errors are still displayed, to disable them, repeat the flag twice: --quiet --quiet
+#       - fcsk still display messages, to disable them, redirect them to /dev/null:
+#           openrc boot --quiet >> /dev/null
+#       - networking message are still displayed, I don't know hot to disable them
+#       - busybox (I think) messages are still displayed during shutdown and reboot
+#       - Welcome to Alpine is still displayed, to disable it truncate /etc/issue
+
 ################################################################
 ###                 Check root privileges                   ####
 ################################################################
