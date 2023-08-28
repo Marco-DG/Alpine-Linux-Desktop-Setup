@@ -19,3 +19,9 @@
 - compiles a binary called `autologin` and puts it into `/usr/sbin`, such binary is a wrapper around the `login` binary situated in `/bin`.
 - edits `/etc/inittab` adding the `-n -l /usr/sbin/autologin` flags to `/sbin/getty` for each tty.
 - truncates `etc/motd`: the file containing the message prompted right after login.
+
+
+##### 04_silent-boot.sh
+
+- Enables OpenRC parallelization by editing `rc_parallel="YES"` in the `/etc/rc.conf` file.
+- Adds the `--quiet` flags to the `/sbin/openrc` commands in the `/etc/inittab` file.
