@@ -22,10 +22,8 @@ touch $HOME/.configs/ash/.ashrc
 ###############################################
 echo -n "ATTENTION !!! '/etc/profile/ will be nuked, digit 'y' to continue, any other key will exit: "
 read -r _to_nuke_or_not_to_nuke_that_is_the_question
-test "$_to_nuke_or_not_to_nuke_that_is_the_question" -eq "y" || echo "exiting"
+[ "$_to_nuke_or_not_to_nuke_that_is_the_question" != "y" ] && exit 1
 
-
-echo "what"
 
 ###############################################
 ### ask for root privileges                 ###
