@@ -69,7 +69,7 @@ mkdir -p $HOME/.logs/ash
 ###############################################
 ### move .ash_history                       ###
 ###############################################
-mv ~.ash_history .logs/ash/.ash_history
+mv $HOME/.ash_history %HOME/.logs/ash/.ash_history
 
 exec ash -l
 
