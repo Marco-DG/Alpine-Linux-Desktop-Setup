@@ -61,7 +61,7 @@ EOF
 ###############################################
 ### set HISTFILE enviroment variable        ###
 ###############################################
-mkdir $HOME/.logs/ash
+mkdir -p $HOME/.logs/ash
 {
     echo 'HISTFILE="$HOME/.config/ash_history"'
 } >> $HOME/.configs/ash/.ashrc
