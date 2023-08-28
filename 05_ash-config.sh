@@ -50,26 +50,14 @@ doas truncate -s0 /etc/profile
 EOF
 
 ###############################################################
-###                     ~/.configs                          ###
+###             ~/.configs/ash/.ashrc                       ###
 ###############################################################
-
-
-###############################################
-### create .ashrc                           ###
-###############################################
 mkdir -p $HOME/.configs/ash/
-touch $HOME/.configs/ash/.ashrc
+wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.configs/ash/.ashrc  -P $HOME/.configs/ash/
 
-###############################################
-### set HISTFILE enviroment variable        ###
-###############################################
-{
-    echo 'HISTFILE="$HOME/.config/ash_history"'
-} >> $HOME/.configs/ash/.ashrc
-
-###############################################
-### move .ash_history                       ###
-###############################################
+###############################################################
+###             ~/.logs/ash/.ash_history                    ###
+###############################################################
 mkdir -p $HOME/.logs/ash
 mv -f $HOME/.ash_history $HOME/.logs/ash/
 
