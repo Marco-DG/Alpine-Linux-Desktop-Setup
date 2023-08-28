@@ -35,7 +35,7 @@ doas truncate -s0 /etc/profile
 {
     echo 'export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"'
     echo ""
-    echo "export ENV=\$_home/.configs/ash/.ashrc"
+    echo "export ENV=$_home/.configs/ash/.ashrc"
     echo ""
     echo "for script in /etc/profile.d/*.sh ; do"
     echo -e -n "\t"; echo   'if [-r "\$script" ] ; then'
