@@ -22,15 +22,18 @@ touch $HOME/.configs/ash/.ashrc
 ###############################################
 echo "ATTENTION !!! '/etc/profile/ will be nuked, digit "y" to continue, any other key will exit: "
 read _to_nuke_or_not_to_nuke_that_is_the_question
-if "$_to_nuke_or_not_to_nuke_that_is_the_question"="y"; then
-    echo ""
-    echo "Please provide root access: "
-    doas -u root ash << EOF
-    doas truncate -s0 /etc/profile
-else
+if "$_to_nuke_or_not_to_nuke_that_is_the_question"!="y"; then
     exit 1
 fi
 unset _to_nuke_or_not_to_nuke_that_is_the_question
+
+###############################################
+### ask for root privileges                 ###
+###############################################
+echo ""
+echo "Please provide root access: "
+doas -u root ash << EOF
+doas truncate -s0 /etc/profile
 
 ###############################################
 ### write /etc/profile                      ###
