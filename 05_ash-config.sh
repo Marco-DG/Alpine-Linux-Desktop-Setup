@@ -25,6 +25,7 @@ read -r _to_nuke_or_not_to_nuke_that_is_the_question
 [ "$_to_nuke_or_not_to_nuke_that_is_the_question" != "y" ] && exit 1
 
 
+
 ###############################################
 ### ask for root privileges                 ###
 ###############################################
