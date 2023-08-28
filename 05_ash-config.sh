@@ -20,12 +20,12 @@ touch $HOME/.configs/ash/.ashrc
 ###############################################
 ### nuke /etc/profile                       ###
 ###############################################
-echo "ATTENTION !!! '/etc/profile/ will be nuked, digit "y" to continue, any other key will exit: "
+echo -n "ATTENTION !!! '/etc/profile/ will be nuked, digit "y" to continue, any other key will exit: "
 read _to_nuke_or_not_to_nuke_that_is_the_question
 if "$_to_nuke_or_not_to_nuke_that_is_the_question"!="y"; then
     exit 1
 fi
-unset _to_nuke_or_not_to_nuke_that_is_the_question
+
 
 ###############################################
 ### ask for root privileges                 ###
@@ -75,3 +75,5 @@ mkdir $HOME/.logs/ash
 mv ~.ash_history .logs/ash/.ash_history
 
 exec ash -l
+
+unset _to_nuke_or_not_to_nuke_that_is_the_question
