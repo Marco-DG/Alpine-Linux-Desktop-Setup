@@ -2,7 +2,7 @@
 ###                      .ash_history                       ###
 ###############################################################
 
-HISTFILE=$HOME/.logs/.ash_history
+HISTFILE="$HOME/.config/ash_history"
 
 ###############################################################
 ###                    SHELL AESTHETICS                     ###
@@ -10,4 +10,4 @@ HISTFILE=$HOME/.logs/.ash_history
 
 afetch
 
-PS1=\[\e[0;32m\][ $? \[\e[0;33m\]\t \[\e[0;32m\]\u \[\e[0;33m\]\w \[\e[0;32m\]] \$ \[\e[0m\]
+PS1="\[\e[0;32m\][ $? \[\e[0;33m\]\t \[\e[0;32m\]\u \[\e[0;33m\]\w \[\e[0;32m\]] \$ \[\e[0m\]"
