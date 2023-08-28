@@ -52,11 +52,17 @@ doas truncate -s0 /etc/profile
 EOF
 
 ###############################################################
-###             ~/.configs/ash/.ashrc                       ###
+###                 ~/.configs/ash/.ashrc                   ###
 ###############################################################
 mkdir -p $_home/.configs/ash/
 rm -f $_home/.configs/ash/.ashrc
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.configs/ash/.ashrc  -P $_home/.configs/ash/
+
+###############################################################
+###                         afetch                          ###
+###############################################################
+
+apk add afetch --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 ###############################################################
 ###             ~/.logs/ash/.ash_history                    ###
@@ -64,12 +70,10 @@ wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/maste
 mkdir -p $_home/.logs/ash
 mv -f $_home/.ash_history $_home/.logs/ash/
 
-exec ash
+
+source $_home/.configs/ash/.ashrc
 rm -f $_home/.ash_history
 
-#doas -u $(id -u -n) ash << EOF
-#    rm -f $_home/.ash_history
-#EOF
 
 unset _home
 unset _to_nuke_or_not_to_nuke_that_is_the_question
