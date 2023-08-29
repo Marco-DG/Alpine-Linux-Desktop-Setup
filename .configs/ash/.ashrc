@@ -22,8 +22,9 @@ PS1='\[\033[1;31m\]\W/\[\033[0m\] '
 ###                        ALIASES                          ###
 ###############################################################
 
-alias ash="clear; $_fetch"
-alias sh="clear; $_fetch"
+alias fetch="clear; $_fetch"
+alias ls="ls -a"
+alias apk="doas apk"
 
 ###############################################################
 ###                         EXIT                            ###
