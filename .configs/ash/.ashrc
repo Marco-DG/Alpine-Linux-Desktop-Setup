@@ -8,7 +8,7 @@
 ###                      .ash_history                       ###
 ###############################################################
 
-HISTFILE="$HOME/.logs/ash/ash_history"
+HISTFILE="$HOME/.logs/ash/.ash_history"
 
 ###############################################################
 ###                    SHELL AESTHETICS                     ###
