@@ -50,7 +50,7 @@ doas truncate -s0 /etc/profile
 ###                     apk add afetch                      ###
 ###############################################################
 
-apk add afetch --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing
+#apk add afetch --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing
 
 ###############################################
 ### drop root privileges                    ###
