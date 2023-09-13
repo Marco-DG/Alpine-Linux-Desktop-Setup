@@ -30,8 +30,9 @@ export XDG_RUNTIME_DIR=$HOME/.cache/xdg-runtime
 ###############################################################
 
 #alias fetch="clear; $_fetch"
-alias ls="ls -a"
+alias ls="doas ls -a"
 alias apk="doas apk"
+alias vi="doas vi"
 
 ###############################################################
 ###                         EXIT                            ###
