@@ -39,7 +39,7 @@ read -r _username
 #        setting this string - at least equal to the username - makes the user distinguishable,
 #         e.g. when they are listed at the login screen of a display manager.
 
-adduser --gecos "$_username" $_username     \
+adduser --gecos "$_username"     \
         --disabled-password                 \
         $_username
 
