@@ -87,5 +87,11 @@ rm -rf /root/*
 echo ""
 echo "run: 'exit' and then login again as '$_username'"
 
+
+###############################################################
+###                       Clean Logs                        ###
+###############################################################
+truncate -s0 /root/.ash_history
+
 unset _username
 unset _password
