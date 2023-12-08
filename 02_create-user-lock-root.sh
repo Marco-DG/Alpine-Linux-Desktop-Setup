@@ -93,6 +93,9 @@ echo "run: 'exit' and then login again as '$_username'"
 ###                       Clean Logs                        ###
 ###############################################################
 truncate -s0 /root/.ash_history
+rm /root/.ash_history
+
+exit
 
 unset _username
 unset _password
