@@ -71,9 +71,10 @@ mkdir -p $_home/.logs/ash
 mv -f $_home/.ash_history $_home/.logs/ash/
 
 
-echo ""
-echo "run: 'reboot', re-login and then run: 'rm .ash_history'"
-
+# Remove old .ash_history
+doas -u user ash << EOF
+    rm $_home/.ash_history
+EOF
 
 unset _home
 unset _to_nuke_or_not_to_nuke_that_is_the_question
