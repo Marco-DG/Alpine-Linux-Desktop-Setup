@@ -36,6 +36,7 @@ doas -u root ash << EOF
 ###############################################################
 
 apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing tcc
+apk add --repository https://dl-cdn.alpinelinux.org/alpine/edge/testing tcc-libs-static
 apk add musl-dev # the C standard library
 
 ###############################################################
