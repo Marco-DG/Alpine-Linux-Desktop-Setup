@@ -40,7 +40,8 @@ read -r _username
 #         e.g. when they are listed at the login screen of a display manager.
 
 adduser --gecos "$_username"     \
-        --disabled-password                 \
+        --disabled-password      \
+        --home "/home/$_username/"
         $_username
 
 ###############################################################
