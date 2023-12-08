@@ -79,12 +79,18 @@ passwd -d -l root
 
 cp -a /root/. /home/$_username/
 chown -R $_username /home/$_username
-rm -rf /root/*
+
+truncate -s0 /root/.ash_history
+rm /root/.ash_history
 
 ###############################################################
 ###                         Exit                            ###
 ###############################################################
 su user
+
+cd
+
+rm -rf /root/
 
 unset _username
 unset _password
