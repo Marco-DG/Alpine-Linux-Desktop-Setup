@@ -20,8 +20,15 @@
 - edits `/etc/inittab` adding the `-n -l /usr/sbin/autologin` flags to `/sbin/getty` for each tty.
 - truncates `etc/motd`: the file containing the message prompted right after login.
 
-
 ##### 04_silent-boot.sh
 
 - Enables OpenRC parallelization by editing `rc_parallel="YES"` in the `/etc/rc.conf` file.
 - Adds the `--quiet` flags to the `/sbin/openrc` commands in the `/etc/inittab` file.
+
+##### 05_ash-config.sh
+
+- nukes /etc/profile
+- sets /etc/profile.d/ ad the directory in which to look for startup scripts
+- sets ~/.configs/ash/ as the .ashrc directory
+- sets ~/.logs/ash/ as the .ash_history directory
+
