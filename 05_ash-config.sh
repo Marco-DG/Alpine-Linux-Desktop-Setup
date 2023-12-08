@@ -70,11 +70,10 @@ wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/maste
 mkdir -p $_home/.logs/ash
 mv -f $_home/.ash_history $_home/.logs/ash/
 
-
-# Remove old .ash_history
-doas -u user ash << EOF
-    rm $_home/.ash_history
-EOF
+###############################################################
+###                         Exit                            ###
+###############################################################
+su -l user 
 
 unset _home
 unset _to_nuke_or_not_to_nuke_that_is_the_question
