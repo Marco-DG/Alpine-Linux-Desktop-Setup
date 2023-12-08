@@ -88,14 +88,16 @@ chown -R $_username /home/$_username
 echo ""
 echo "run: 'exit' and then login again as '$_username'"
 
-
 ###############################################################
 ###                       Clean Logs                        ###
 ###############################################################
 truncate -s0 /root/.ash_history
 rm /root/.ash_history
 
-exit
+###############################################################
+###                         Exit                            ###
+###############################################################
+su -u user ash
 
 unset _username
 unset _password
