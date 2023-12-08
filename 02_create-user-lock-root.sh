@@ -41,7 +41,7 @@ read -r _username
 
 adduser --gecos "$_username"     \
         --disabled-password      \
-        --home "/home/$_username/"
+        --home "/home/$_username/" \
         $_username
 
 ###############################################################
