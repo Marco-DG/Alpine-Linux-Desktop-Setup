@@ -29,6 +29,6 @@
 
 - nukes `/etc/profile`.
 - sets `/etc/profile.d/` as the directory in which to look for startup scripts.
-- sets `~/.configs/ash/` as the `.ashrc` directory.
+- sets `~/.config/ash/` as the `.ashrc` directory.
 - sets `~/.logs/ash/` as the `.ash_history` directory.
 
