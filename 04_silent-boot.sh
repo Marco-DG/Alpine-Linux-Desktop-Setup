@@ -5,10 +5,17 @@
 ###                 Check root privileges                   ###
 ###############################################################
 
-if [ "$(id -u)" -ne 0 ]
-    then echo "This script requires root privileges"
-    exit 1
-fi
+#if [ "$(id -u)" -ne 0 ]
+#    then echo "This script requires root privileges"
+#    exit 1
+#fi
+
+###############################################################
+###                 ask for root privileges                 ###
+###############################################################
+
+echo "Please provide root access: "
+doas -u root ash << EOF
 
 ###############################################################
 ###                 Parallelizing Boot                      ###
@@ -61,6 +68,8 @@ if grep -q "openrc shutdown --quiet" /etc/inittab; then
 else
     doas sed -i 's@openrc shutdown@openrc shutdown --quiet@g' /etc/inittab
 fi
+
+EOF
 
 ### NOTES
 #   the --quiet flag alone does not suppress all the messages:
