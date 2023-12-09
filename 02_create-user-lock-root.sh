@@ -81,7 +81,8 @@ cp -a /root/. /home/$_username/
 chown -R $_username /home/$_username
 
 # remove all files in /root directory (including hidden files and subdirectories)
-rm -rf /root/{*,.*}
+rm -rf /root/*
+rm -rf /root/.ash_history
 
 ###############################################################
 ###                         Exit                            ###
