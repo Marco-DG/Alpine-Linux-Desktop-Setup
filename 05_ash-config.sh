@@ -27,7 +27,7 @@ echo ""
 echo "Please provide root access: "
 doas -u root ash << EOF
 
-doas truncate -s0 /etc/profile
+truncate -s0 /etc/profile
 
 ###############################################
 ### write /etc/profile                      ###
