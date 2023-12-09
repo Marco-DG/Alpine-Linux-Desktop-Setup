@@ -80,7 +80,7 @@ passwd -d -l root
 cp -a /root/. /home/$_username/
 chown -R $_username /home/$_username
 
-rm -rf /root/
+rm -rf /root/*
 
 ###############################################################
 ###                         Exit                            ###
