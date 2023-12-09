@@ -33,6 +33,8 @@ export XDG_RUNTIME_DIR=$HOME/.cache/xdg-runtime
 alias ls="doas ls -a"
 alias apk="doas apk"
 alias vi="doas vi"
+alias cat="doas cat"
+alias rm="rm -rf"
 
 ###############################################################
 ###                         EXIT                            ###
