@@ -3,3 +3,4 @@ wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/maste
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/03_autologin.sh
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/04_silent-boot.sh
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/05_ash-config.sh
+wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/06_labwc.sh
