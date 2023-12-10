@@ -23,7 +23,8 @@ PS1='\[\033[1;31m\]\W/\[\033[0m\] '
 ###                         XDG                             ###
 ###############################################################
 
-export XDG_RUNTIME_DIR=$HOME/.cache/xdg-runtime
+export XDG_RUNTIME_DIR="$HOME/.cache/"
+export XDG_CONFIG_HOME="$HOME/.config/"
 
 ###############################################################
 ###                        ALIASES                          ###
