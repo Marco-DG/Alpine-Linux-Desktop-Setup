@@ -15,6 +15,7 @@ adduser $USER seat
 
 apk add labwc
 
+rm -rf ~/.config/labwc/
 mkdir -p ~/.config/labwc
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/labwc/environment -O ~/.config/labwc/environment
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/labwc/autostart -O ~/.config/labwc/autostart
