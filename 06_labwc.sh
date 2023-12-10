@@ -1,9 +1,16 @@
-doas setup-devd udev
+###############################################
+### ask for root privileges                 ###
+###############################################
+echo ""
+echo "Please provide root access: "
+doas -u root ash << EOF
+
+setup-devd udev
 
 apk add mesa-dri-gallium
 
-doas adduser $USER input
-doas adduser $USER video
+adduser $USER input
+adduser $USER video
 
 apk add font-dejavu
 
@@ -14,6 +21,8 @@ rc-service seatd start
 adduser $USER seat
 
 apk add labwc
+
+EOF
 
 rm -rf ~/.config/labwc/
 mkdir -p ~/.config/labwc
