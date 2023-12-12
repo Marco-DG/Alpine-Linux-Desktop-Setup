@@ -32,3 +32,6 @@ wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/maste
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/labwc/rc.xml -O ~/.config/labwc/rc.xml
 
 
+mkdir ~/.cache
+
+
