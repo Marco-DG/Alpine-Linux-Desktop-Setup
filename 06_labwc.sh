@@ -12,7 +12,7 @@ apk add mesa-dri-gallium
 adduser $USER input
 adduser $USER video
 
-apk add font-dejavu
+apk add font-noto
 
 
 apk add seatd
