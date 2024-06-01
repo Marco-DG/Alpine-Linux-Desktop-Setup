@@ -1,6 +1,6 @@
 # plugins loader
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-plug "andreyorst/plug.kak" noload
+#source "%val{config}/plugins/plug.kak/rc/plug.kak"
+#plug "andreyorst/plug.kak" noload
 
 # switch theme on insert: https://musteresel.github.io/posts/2020/11/kakoune-colorscheme-per-mode-clipboard-integration.html
 hook global WinCreate '.*' %{
