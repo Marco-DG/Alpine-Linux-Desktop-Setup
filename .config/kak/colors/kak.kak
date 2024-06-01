@@ -40,9 +40,9 @@ face window MenuBackground      default,rgb:212121
 face window MenuInfo            default,rgb:545454
 face window Information         default,rgb:454545
 face window Error               rgb:121212,rgb:dedede
-face window StatusLine          rgb:cccccc,rgb:212121
-face window StatusLineMode      rgb:121212,rgb:dedede
-face window StatusLineInfo      rgb:ffffff,rgb:333333
-face window StatusLineValue     rgb:ffffff,rgb:454545
-face window StatusCursor        default,rgb:787878
+face window StatusLine          rgb:333333,rgb:dedede
+face window StatusLineMode      rgb:ededed,rgb:212121
+face window StatusLineInfo      rgb:000000,rgb:cccccc
+face window StatusLineValue     rgb:000000,rgb:bababa
+face window StatusCursor        default,rgb:878787
 face window Prompt              rgb:121212,rgb:dedede
