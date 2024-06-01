@@ -1,6 +1,65 @@
+# 
+# ██╗  ██╗██╗ ██████╗ ██╗  ██╗██╗     ██╗ ██████╗ ██╗  ██╗████████╗███████╗██████╗ 
+# ██║  ██║██║██╔════╝ ██║  ██║██║     ██║██╔════╝ ██║  ██║╚══██╔══╝██╔════╝██╔══██╗
+# ███████║██║██║  ███╗███████║██║     ██║██║  ███╗███████║   ██║   █████╗  ██████╔╝
+# ██╔══██║██║██║   ██║██╔══██║██║     ██║██║   ██║██╔══██║   ██║   ██╔══╝  ██╔══██╗
+# ██║  ██║██║╚██████╔╝██║  ██║███████╗██║╚██████╔╝██║  ██║   ██║   ███████╗██║  ██║
+# ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
+#
+
+# add line numbers
+add-highlighter global/ number-lines -hlcursor -separator "  " -min-digits 3
+
+# highlight trailing whitespaces
+add-highlighter global/ regex '\h*$' 0:red,red
+
+# highlight matching braces, parentheses, quotes, etc.
+add-highlighter global/ show-matching
+
+# 
+#  ██████╗ ██████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
+# ██╔═══██╗██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
+# ██║   ██║██████╔╝   ██║   ██║██║   ██║██╔██╗ ██║███████╗
+# ██║   ██║██╔═══╝    ██║   ██║██║   ██║██║╚██╗██║╚════██║
+# ╚██████╔╝██║        ██║   ██║╚██████╔╝██║ ╚████║███████║
+#  ╚═════╝ ╚═╝        ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝
+# 
+
+# tabs 4 spaces wide
+set-option global tabstop 		4
+set-option global indentwidth   4
+
+# remove clippy the assistant and use the kitty instead
+set-option global ui_options terminal_assistant=cat
+
+#
+# ██████╗ ██╗     ██╗   ██╗ ██████╗ ██╗███╗   ██╗███████╗
+# ██╔══██╗██║     ██║   ██║██╔════╝ ██║████╗  ██║██╔════╝
+# ██████╔╝██║     ██║   ██║██║  ███╗██║██╔██╗ ██║███████╗
+# ██╔═══╝ ██║     ██║   ██║██║   ██║██║██║╚██╗██║╚════██║
+# ██║     ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║███████║
+# ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
+#
+
 # plugins loader
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
+
+# pressing x will select the entire line,
+# subsequent x’s will keep expanding the selection line-by-line,
+# pressing <shift>x will shrink the selection by a line.
+plug "evanrelf/byline.kak" config %{
+  require-module "byline"
+}
+
+# 
+# ██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗███████╗
+# ██║  ██║██╔═══██╗██╔═══██╗██║ ██╔╝██╔════╝
+# ███████║██║   ██║██║   ██║█████╔╝ ███████╗
+# ██╔══██║██║   ██║██║   ██║██╔═██╗ ╚════██║
+# ██║  ██║╚██████╔╝╚██████╔╝██║  ██╗███████║
+# ╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+#                                           
 
 # switch theme on insert: https://musteresel.github.io/posts/2020/11/kakoune-colorscheme-per-mode-clipboard-integration.html
 hook global WinCreate '.*' %{
@@ -23,21 +82,3 @@ hook global InsertCompletionShow .* %{
     }
   }
 }
-
-# add line numbers
-add-highlighter global/ number-lines -hlcursor -separator "  " -min-digits 3
-
-# highlight trailing whitespaces
-add-highlighter global/ regex '\h*$' 0:red,red
-
-# highlight matching braces, parentheses, quotes, etc.
-add-highlighter global/ show-matching
-
-# tabs 4 spaces wide
-set-option global tabstop 		4
-set-option global indentwidth   4
-
-# remove clippy the assistant and use the kitty instead
-set-option global ui_options terminal_assistant=cat
-
-
