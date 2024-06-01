@@ -20,14 +20,5 @@ wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/maste
 #plugins
 mkdir -p ~/.config/kak/plugins
 
-# plug.kak
-#mkdir -p ~/.config/kak/plugins/plug.kak
-#wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/plugins/plug.kak/README.md -P ~/.config/kak/plugins/plug.kak/
-#wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/plugins/plug.kak/LICENSE -P ~/.config/kak/plugins/plug.kak/
-#
-#mkdir -p ~/.config/kak/plugins/plug.kak/rc
-#wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/plugins/plug.kak/rc/plug.sh -P ~/.config/kak/plugins/plug.kak/rc/
-#wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/plugins/plug.kak/rc/plug.kak -P ~/.config/kak/plugins/plug.kak/rc/
-
 # byline
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/plugins/byline.kak -P ~/.config/kak/plugins/
