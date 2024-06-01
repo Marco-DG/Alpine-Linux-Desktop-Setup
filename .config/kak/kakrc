@@ -7,6 +7,8 @@
 # ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝
 #
 
+colorscheme darker-sky
+
 # add line numbers
 add-highlighter global/ number-lines -hlcursor -separator "  " -min-digits 3
 
@@ -57,13 +59,13 @@ require-module "byline"
 #
 
 # switch theme on insert: https://musteresel.github.io/posts/2020/11/kakoune-colorscheme-per-mode-clipboard-integration.html
-hook global WinCreate '.*' %{
-  colorscheme kak
-  hook window ModeChange 'push:.*:insert' 'colorscheme kak-in'
-  hook window ModeChange 'push:insert:.*' 'colorscheme kak'
-  hook window ModeChange 'pop:insert:.*' 'colorscheme kak'
-  hook window ModeChange 'pop:.*:insert' 'colorscheme kak-in'
-}
+#hook global WinCreate '.*' %{
+#  colorscheme kak
+#  hook window ModeChange 'push:.*:insert' 'colorscheme kak-in'
+#  hook window ModeChange 'push:insert:.*' 'colorscheme kak'
+#  hook window ModeChange 'pop:insert:.*' 'colorscheme kak'
+#  hook window ModeChange 'pop:.*:insert' 'colorscheme kak-in'
+#}
 
 # <tab> and <shift><tab> selections instead of the <c-n>, <c-p> convention for selecting autocomplete items.
 hook global InsertCompletionShow .* %{
