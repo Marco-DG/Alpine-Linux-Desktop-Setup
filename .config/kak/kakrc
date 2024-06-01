@@ -1,6 +1,6 @@
 # plugins loader
-#source "%val{config}/plugins/plug.kak/rc/plug.kak"
-#plug "andreyorst/plug.kak" noload
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
 
 # switch theme on insert: https://musteresel.github.io/posts/2020/11/kakoune-colorscheme-per-mode-clipboard-integration.html
 hook global WinCreate '.*' %{
@@ -9,6 +9,19 @@ hook global WinCreate '.*' %{
   hook window ModeChange 'push:insert:.*' 'colorscheme kak'
   hook window ModeChange 'pop:insert:.*' 'colorscheme kak'
   hook window ModeChange 'pop:.*:insert' 'colorscheme kak-in'
+}
+
+# <tab> and <shift><tab> selections instead of the <c-n>, <c-p> convention for selecting autocomplete items.
+hook global InsertCompletionShow .* %{
+  try %{
+    execute-keys -draft 'h<a-K>\h<ret>'
+    map window insert <tab> <c-n>
+    map window insert <s-tab> <c-p>
+    hook -once -always window InsertCompletionHide .* %{
+      unmap window insert <tab> <c-n>
+      unmap window insert <s-tab> <c-p>
+    }
+  }
 }
 
 # add line numbers
