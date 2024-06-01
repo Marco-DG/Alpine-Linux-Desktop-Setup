@@ -41,16 +41,11 @@ set-option global ui_options terminal_assistant=cat
 # ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚══════╝
 #
 
-# plugins loader
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-plug "andreyorst/plug.kak" noload
-
 # pressing x will select the entire line,
 # subsequent x’s will keep expanding the selection line-by-line,
 # pressing <shift>x will shrink the selection by a line.
-plug "evanrelf/byline.kak" config %{
-  require-module "byline"
-}
+source ~/.config/kak/plugins/byline.kak
+require-module "byline"
 
 # 
 # ██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗███████╗
