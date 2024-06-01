@@ -15,8 +15,7 @@ mkdir -p ~/.config/kak
 
 mkdir -p ~/.config/kak/colors
 wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/kakrc -P ~/.config/kak/
-wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/colors/kak.kak -P ~/.config/kak/colors/
-wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/colors/kak-in.kak -P ~/.config/kak/colors/
+wget https://raw.githubusercontent.com/Marco-DG/Alpine-Linux-Desktop-Setup/master/.config/kak/colors/darker-sky.kak -P ~/.config/kak/colors/
 
 #plugins
 mkdir -p ~/.config/kak/plugins
